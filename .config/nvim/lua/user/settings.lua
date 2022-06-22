@@ -37,6 +37,11 @@ vim.api.nvim_set_keymap('n', 'L', ':bn<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<F10>', ':Bw<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<F11>', ':Bw!<cr>', { noremap = true })
 
+vim.cmd[[
+  set foldmethod=expr
+  set foldexpr=nvim_treesitter#foldexpr()
+]]
+
 vim.cmd[[ 
   au BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)
 ]]
