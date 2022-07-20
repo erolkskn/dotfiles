@@ -31,3 +31,4 @@ alias ls='ls --color=auto'
 alias ll='ls -a -l'
 alias l='ls -a'
 alias vim=$(which nvim)
+alias av='source .venv/bin/activate' # for python virtualenv
