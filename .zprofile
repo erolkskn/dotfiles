@@ -20,6 +20,8 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 # golang
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
+export GOSUMDB="sum.golang.org"
+export GOPROXY="https://proxy.golang.org,direct"
 export PATH="$PATH:$GOBIN"
 
 # dotnet core
