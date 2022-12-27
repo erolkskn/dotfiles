@@ -11,9 +11,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# ssh-agent
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
 # rust
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
@@ -28,9 +25,12 @@ export PATH="$PATH:$GOBIN"
 export PATH="$PATH:$HOME/.dotnet/tools"
 
 # java
-export JAVA_HOME="/usr/lib/jvm/default"
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix for java gui apps
 
 # android
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+
+# python
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PATH:$PYENV_ROOT/bin"

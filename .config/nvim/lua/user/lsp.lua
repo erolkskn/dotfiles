@@ -49,21 +49,15 @@ lspconf.rust_analyzer.setup {
   capabilities = capabilities 
 }
 
-lspconf.omnisharp.setup {
+lspconf.pyright.setup {
   on_attach = on_attach,
   flags = {
     debounce_text_changes = 150
   },
-  capabilities = capabilities,
-  cmd = {
-    "/home/erolmon/Downloads/omni/run", 
-    "--languageserver", 
-    "--hostPID", 
-    tostring(vim.fn.getpid())
-  }
+  capabilities = capabilities 
 }
 
-lspconf.pyright.setup {
+lspconf.tsserver.setup {
   on_attach = on_attach,
   flags = {
     debounce_text_changes = 150

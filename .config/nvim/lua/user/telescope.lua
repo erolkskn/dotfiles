@@ -1,8 +1,16 @@
 require('telescope').setup {
   pickers = {
     live_grep = {
-      grep_open_files = false
-    }
+      grep_open_files = false,
+      theme = "ivy",
+      file_ignore_patterns = {"vendor"}
+    },
+    buffers = {
+      theme = "ivy"
+    },
+    find_files = {
+      theme = "ivy"
+    },
   }
 }
 

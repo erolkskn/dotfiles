@@ -28,8 +28,8 @@ vim.cmd('colorscheme codedark')
 vim.cmd [[
   au FileType go setlocal noexpandtab
   au FileType lua setlocal shiftwidth=2 softtabstop=2
-  au BufRead *.csproj setlocal shiftwidth=2 softtabstop=2
-  au BufRead *.props setlocal shiftwidth=2 softtabstop=2
+  au FileType js,jsx,ts,tsx setlocal shiftwidth=2 softtabstop=2
+  au FileType yaml,yml setlocal shiftwidth=2 softtabstop=2
 ]]
 
 vim.api.nvim_set_keymap('n', 'H', ':bp<cr>', { noremap = true })
@@ -37,10 +37,10 @@ vim.api.nvim_set_keymap('n', 'L', ':bn<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<F10>', ':Bw<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<F11>', ':Bw!<cr>', { noremap = true })
 
-vim.cmd[[
-  set foldmethod=expr
-  set foldexpr=nvim_treesitter#foldexpr()
-]]
+--vim.cmd[[
+--  set foldmethod=expr
+--  set foldexpr=nvim_treesitter#foldexpr()
+--]]
 
 vim.cmd[[ 
   au BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)

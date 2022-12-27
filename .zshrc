@@ -15,14 +15,23 @@ alias ls='ls --color=auto'
 alias ll='ls -a -l'
 alias l='ls -a'
 alias vim='nvim'
-alias docker='podman'
-alias docker-compose='podman-compose'
-alias av='source .venv/bin/activate' # for python virtualenv
 
 antigen theme romkatv/powerlevel10k
-antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
 antigen apply
+
+# zsh-history-substring-search configuration
+bindkey '^[[A' history-substring-search-up # or '\eOA'
+bindkey '^[[B' history-substring-search-down # or '\eOB'
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# python
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$PATH:/opt/heroku/bin"

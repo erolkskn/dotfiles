@@ -1,0 +1,57 @@
+# c/cpp build
+sudo dnf install meson gcc g++ make cmake clang
+
+# dev headers
+sudo dnf install kernel-devel cxxopts-devel boost-devel
+
+# wm
+## base x11 libs and tools
+sudo dnf groupinstall "base-x"
+sudo dnf install xclip xrandr
+
+## x11 headers 
+sudo dnf install xorg-x11-server-devel libX11-devel libXft-devel libXinerama-devel imlib2 imlib2-devel libXrandr libXrandr-devel
+
+## for dwmblocks development
+sudo dnf install ShellCheck
+
+## compositor
+sudo dnf install picom
+
+## audio
+sudo dnf install pulseaudio-libs pulseaudio-libs-devel
+
+# rpm fusion
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf update -y
+
+# browser
+sudo dnf install chromium-freeworld
+
+# term
+sudo dnf install zsh
+mkdir -p .config/zsh
+curl -L git.io/antigen > .config/zsh/antigen.zsh
+
+# development environment
+sudo dnf install neovim luajit luajit-devel ripgrep podman-compose
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ${XDG_DATA_HOME}/nvim/site/pack/packer/start/packer.nvim
+
+## nodejs
+sudo dnf install nodejs
+sudo mkdir -p $(npm config get prefix)/lib/node_modules
+sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share} 
+npm i -g typescript typescript-language-server
+
+## python
+python3 -m ensurepip --default-pip
+npm i -g pyright
+pip install virtualenv
+
+## golang
+sudo dnf install golang golang-x-tools-gopls
+
+# programs
+sudo dnf install htop weechat
+sudo dnf install neofetch # :)
